@@ -9,7 +9,7 @@ import java.util.ListIterator;
 import java.util.Random;
 
 @Service
-public class blogsService {
+public class BlogsService {
     private List<Blog> blogs = new ArrayList<>();
 
     public Blog save(Blog body){
