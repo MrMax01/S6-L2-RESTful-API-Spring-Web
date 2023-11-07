@@ -24,16 +24,16 @@ public class AuthorsService {
     }
 
     public Author findAuthorById(int id){
-        Author u = null;
-        for (Author user: this.authors) {
-            if (user.getId() == id) {
-                u = user;
+        Author a = null;
+        for (Author author: this.authors) {
+            if (author.getId() == id) {
+                a = author;
             }
         }
-        if(u == null ){
+        if(a == null ){
             throw new RuntimeException("non trova l'id");
         } else {
-            return u;
+            return a;
         }
     }
 
@@ -51,9 +51,9 @@ public class AuthorsService {
     public Author findAuthorByIdAndUpdate(int id, Author body){
         Author found = null;
 
-        for (Author user:this.authors) {
-            if(user.getId() == id){
-                found = user;
+        for (Author author:this.authors) {
+            if(author.getId() == id){
+                found = author;
                 found.setId(id);
                 found.setName(body.getName());
                 found.setSurname(body.getSurname());

@@ -24,16 +24,16 @@ public class BlogsService {
     }
 
     public Blog findBlogById(int id){
-        Blog u = null;
-        for (Blog user: this.blogs) {
-            if (user.getId() == id) {
-                u = user;
+        Blog b = null;
+        for (Blog blog: this.blogs) {
+            if (blog.getId() == id) {
+                b = blog;
             }
         }
-        if(u == null ){
+        if(b == null ){
             throw new RuntimeException("non trova l'id");
         } else {
-            return u;
+            return b;
         }
     }
 
@@ -51,9 +51,9 @@ public class BlogsService {
     public Blog findBlogByIdAndUpdate(int id, Blog body){
         Blog found = null;
 
-        for (Blog user:this.blogs) {
-            if(user.getId() == id){
-                found = user;
+        for (Blog blog:this.blogs) {
+            if(blog.getId() == id){
+                found = blog;
                 found.setId(id);
                 found.setCategory(body.getCategory());
                 found.setTitle(body.getTitle());
